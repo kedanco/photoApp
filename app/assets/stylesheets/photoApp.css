@@ -1,0 +1,46 @@
+
+.container-fluid{
+  padding:0px 0px 0px 0px;
+}
+
+#header{
+  margin: 0px 0px 0px 0px;
+}
+
+#footer{
+ position: fixed;
+    width: 100%;
+    bottom: 0px;
+    z-index: 100;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+#footer .jumbotron{
+  margin-bottom:0px;
+}
+
+#footer-content p{
+  font-size:14px;
+}
+
+/*CSS for login page views/devise/sessions/new.html.erb */
+
+.new{
+
+    html, body{
+      background-color: darkgrey;
+    }
+
+
+    h2{
+      margin-bottom: 20px;
+    }
+  
+    label, input{
+      display:inline-block;
+      padding:5px 5px 5px 5px;
+      
+    }
+}
+
