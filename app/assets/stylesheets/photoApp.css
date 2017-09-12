@@ -21,12 +21,36 @@
 }
 
 #footer-content p{
-  font-size:14px;
+  font-size:16px;
 }
 
 /*CSS for login page views/devise/sessions/new.html.erb */
 
 .new{
+
+  #titleHeader{
+    min-height:200px;
+
+    h1{
+      vertical-align: center;
+      padding-top: 30px;
+    }
+
+    h2{
+      font-size:24px;
+    }
+  }
+
+  #loginForm{
+    max-width:600px;
+    min-height: 500px;
+    font-size:16px;
+    *{
+      
+        padding-top: 10px;
+    }
+
+  }
 
     html, body{
       background-color: darkgrey;
