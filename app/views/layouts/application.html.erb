@@ -8,12 +8,33 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-  <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-       <% if user_signed_in? %>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-<% end %>
-    <%= yield %>
+  <body class="<% controller_name %> <%= action_name %>">
+    <div class="container-fluid">
+      <div id="header" class="row">
+     <div class="notice" align="center">
+      <%- flash.each do |key,value| %>
+        <% key %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+           <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+           <% end %>
+      </div>
+
+
+
+
+       <%= yield %>
+
+
+      <div id="footer" class="container">
+          <div class="jumbotron">
+              <div id="footer-content">
+                  <p class="text-muted">Copyright KelSha 2017</p>
+              </div>
+          </div>
+      </div>
+    </div>
   </body>
 </html>
