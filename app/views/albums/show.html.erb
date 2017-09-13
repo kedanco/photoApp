@@ -5,4 +5,4 @@
 <div id="albumTitle"> <p> Title:  <%= @album.title %> </p> </div>
 <div id="albumDesc"> <p> Description:  <%= @album.description %> </p> </div>
 
-<%= link_to 'Back to Albums', user_path(id: @album.user_id), class: "btn btn-primary pull-left" %>  
+<%= link_to 'Back to Albums', user_path(id: @current_user), class: "btn btn-primary pull-left" %>  

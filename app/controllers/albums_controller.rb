@@ -1,16 +1,18 @@
 class AlbumsController < ApplicationController
 
     def show
+      @current_user = current_user.id
       @album = Album.find(params[:id])
     end
 
     def new
-      @album = Album.new(user_id: params[:id])
+      @album = Album.new
     end
 
     def create
       album_params = params[:album].permit(:title,:description)
-      album = Album.new(album_params)
+      user = User.find(current_user.id)
+      album = user.albums.new(album_params)
 
       if album.save
           redirect_to album_path(id: album.id)

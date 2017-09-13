@@ -1,3 +1,23 @@
 <h1>Welcome <user>!!</h1>
 
-<%= link_to "Create A New Album", new_album_path %><br><br>
+<p> ID: <%= current_user.id %> </p>
+<p> Email: <%= current_user.email %> </p>
+
+
+<div id="listAlbums">
+
+<p> Click to Access an Album: </p>
+
+
+<!-- Display List of Albums -->
+
+
+
+</div>
+
+
+
+<%= link_to 'Create New Album', new_album_path, class: "btn btn-success" %> 
+
+
+
