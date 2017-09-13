@@ -15,7 +15,7 @@
         <%= render 'layouts/messages' %>
      
            <% if user_signed_in? %>
-              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
            <% end %>
       </div>
 
