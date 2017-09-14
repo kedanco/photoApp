@@ -4,14 +4,34 @@
 <p> Email: <%= current_user.email %> </p>
 
 
-<div id="listAlbums">
+<div id="listAlbums" class="row">
 
 <p> Click to Access an Album: </p>
 
-
 <!-- Display List of Albums -->
 
-
+    <% if (@albums.empty?) == false %>
+          <% @albums.each do |album| %>
+          
+            <div class="col-sm-6 col-md-4"> 
+              <div class="thumbnail">
+                <img src="" alt="">
+                <div class="caption">
+                  <h4> <%= link_to album_path(id: album.id) do %> <%= album.title %> <% end %> </h4>
+                   <p> <%= album.description %> </p>
+                    <div id="albumButtons">
+                       <%= link_to "Edit", edit_album_path(id: album.id), class:"btn btn-default" %> 
+                      <%= link_to "Delete", album_path(id: album.id), method: :delete, class: "btn btn-danger" %> 
+                    </div> 
+                </div>
+              </div>
+            </div>
+          
+              
+          <% end %>
+    <% else %>
+            <p> No albums have been created. </p>
+    <% end %>
 
 </div>
 

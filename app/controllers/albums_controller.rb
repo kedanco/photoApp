@@ -25,4 +25,17 @@ class AlbumsController < ApplicationController
       end
     end
 
+    def edit
+    end
+
+    def update
+    end
+
+    def destroy
+      @album = Album.find(params[:id])
+      flash[:success] = "Album '#{@album.title}' successfully deleted"
+      @album.destroy
+      redirect_to user_path(current_user.id)
+    end
+
 end

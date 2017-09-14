@@ -1,6 +1,6 @@
 
-.container-fluid{
-  padding:0px 0px 0px 0px;
+#listAlbums{
+  margin:0px 0px 0px 0px;
 }
 
 #header{
@@ -66,5 +66,12 @@
       padding:5px 5px 5px 5px;
       
     }
+}
+
+.users .show{
+
+
+
+
 }
 
