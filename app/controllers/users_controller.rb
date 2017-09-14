@@ -3,8 +3,10 @@ class UsersController < ApplicationController
     end
 
     def show
-      user = User.find(current_user.id)
+      user = User.find(params[:id])
       @albums = user.albums.all
+      @others = User.all
+      render :show
     end
 
 end
