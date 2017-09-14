@@ -30,14 +30,31 @@
               
           <% end %>
     <% else %>
-            <p> No albums have been created. </p>
+            <h4> No albums have been created. </h4>
     <% end %>
 
 </div>
 
 
 
-<%= link_to 'Create New Album', new_album_path, class: "btn btn-success" %> 
+<%= link_to 'Create New Album', new_album_path, class: "btn btn-success" %>
+<br><br><br> 
+
+<% @others.each do |other| %>
+<div class="row otheruser">
+  <div class="col-md-2">
+    <ul class="list-group">
+      <li class="list-group-item"><%= link_to "user", user_path(id: other.id) %></li>
+    </ul>
+  </div>
+</div>
+
+
+<% end %>
+
+
+
+
 
 
 
