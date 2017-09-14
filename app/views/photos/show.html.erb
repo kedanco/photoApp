@@ -1,0 +1,14 @@
+
+<div class="row">
+
+  <div id ="displayPhoto">
+
+      <h2> Photo Display </h2>
+
+      <%=  image_tag @photo.image unless @photo.image.blank? %>
+
+      <%= @photo.caption %>
+
+  </div>
+
+</div>
