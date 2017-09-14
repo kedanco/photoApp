@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
     resources :users
-    resources :albums
+    resources :albums do
+
+      resources :photos
+
+    end
     
     root to: "users#show"
 end
