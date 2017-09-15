@@ -1,14 +1,25 @@
 
 <div class="row">
 
-  <div id ="displayPhoto">
+  <h2> Photo Display </h2>
 
-      <h2> Photo Display </h2>
+  <div id="displayPhoto" class="thumbnail">
 
-      <%=  image_tag @photo.image unless @photo.image.blank? %>
+    <%=  image_tag @photo.image.normal unless @photo.image.blank? %>
 
-      <%= @photo.caption %>
+      <h3> <%= @photo.caption %>  
+
+      <%= link_to 'Edit photo', edit_album_photo_path(album_id:@photo.album_id, id: @photo.id), class: "btn btn-default pull-left" %> 
+        <%= link_to 'Delete photo', album_photo_path(album_id:@photo.album_id, id: @photo.id), method: :delete, class: "btn btn-danger pull-right"%>
+
+      </h3>
+
+      
+
+      
 
   </div>
-
+  <div class="container buttons">
+      <p><%= link_to "Back", album_path(id:@photo.album_id), class: "btn btn-default" %></p>
+  </div>
 </div>

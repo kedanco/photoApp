@@ -1,14 +1,36 @@
 
 
-<h1>Albums Show Page</h1>
+<div class="row">
 
-<div id="albumTitle"> <p> Title:  <%= @album.title %> </p> </div>
-<div id="albumDesc"> <p> Description:  <%= @album.description %> </p> </div>
+  <div class="pageHeader">
+
+  <h1>Albums Show Page</h1>
+
+  <h4> Title:  <%= @album.title %> </h4> 
+  <h4> Description:  <%= @album.description %> </h4>
+
+  <%= link_to 'Add a new Photo', new_album_photo_path(album_id: @album.id), class: "btn btn-default"  %>  
+
+  <%= link_to 'Back to Albums', user_path(id: current_user.id), class: "btn btn-primary" %>  
+
+  </div>
+
+  <div class="displayPhotos">
+
+  <% if !(@photos.empty?) %>
+    <%- @photos.each do |photo| %>
+      <%= link_to album_photo_path(album_id: @album.id, id:photo.id), class: "thumbnail" do %>
+          <%= image_tag photo.image.thumb unless photo.image.blank?  %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <h5>There are currently no photos in this album.</h5>
+  <% end %>
+
+</div>
+
+</div>
 
 
 
-<%= link_to 'Add a new Photo', new_album_photo_path(album_id: @album.id), class: "btn btn-default"  %>  
-
-
-
-<%= link_to 'Back to Albums', user_path(id: current_user.id), class: "btn btn-primary pull-left" %>  
+ 
