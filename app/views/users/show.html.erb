@@ -1,7 +1,17 @@
-<h1>Welcome <user>!!</h1>
+<% if user_signed_in? %>
+Your ID: <%= current_user.id %>
+<h1>Hi <%= current_user.name %>!!</h1>
 
-<p> ID: <%= current_user.id %> </p>
-<p> Email: <%= current_user.email %> </p>
+<% if current_user.id == @user.id %>
+<h4><p>You are viewing your own page</p></h4>
+
+<% else %>
+
+
+<h4><p>You are viewing <%= @user.name %>'s Page</p></h4>
+<p><%= @user.name %>'s' ID: <%= @user.id %> </p>
+<p> Email: <%= @user.email %> </p>
+<% end %>
 
 
 <div id="listAlbums" class="row">
@@ -38,21 +48,13 @@
 
 
 <%= link_to 'Create New Album', new_album_path, class: "btn btn-success" %>
-<br><br><br> 
-
-<% @others.each do |other| %>
-<div class="row otheruser">
-  <div class="col-md-2">
-    <ul class="list-group">
-      <li class="list-group-item"><%= link_to "user", user_path(id: other.id) %></li>
-    </ul>
-  </div>
-</div>
+<%= link_to 'View Other Users', users_path, class: "btn btn-success" %>
+<br><br><br>
 
 
+<% else %>
+<h1>no user signed in.</h1>
 <% end %>
-
-
 
 
 

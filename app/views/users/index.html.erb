@@ -1,0 +1,13 @@
+<br><br>
+
+
+<% @others.each do |others| %>
+<div class="row otheruser">
+  <div class="col-md-1">
+    <ul class="list-group">
+      <li class="list-group-item"><h2><%= link_to others.name, user_path(id: others.id) %><h2></li>
+    </ul>
+  </div>
+</div>
+
+<% end %>

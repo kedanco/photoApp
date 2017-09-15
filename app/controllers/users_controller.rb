@@ -1,13 +1,18 @@
 class UsersController < ApplicationController
-    def index
+
+
+  def index
+    @user = User.find(current_user.id)
+    @others = User.where.not(id: current_user.id)
+  end
+
+  def show
+    if params[:id] == nil
+      @user = User.find(current_user.id)
+    else
+      @user = User.find(params[:id])
     end
-
-    def show
-      user = User.find(params[:id])
-      @albums = user.albums.all
-      @others = User.all
-      render :show
-    end
-
-end
-
+    @albums = @user.albums.all
+  end
+ 
+ end
