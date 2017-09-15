@@ -1,4 +1,17 @@
 
+
+h1,h2,h3,h4,h5,h6{
+  text-align: center;
+}
+
+.pageHeader {
+  text-align: center;
+  > *{
+    padding: 10px 5px 10px 5px;
+  }
+
+}
+
 #listAlbums{
   margin:0px 0px 0px 0px;
 }
@@ -8,7 +21,8 @@
 }
 
 #footer{
- position: fixed;
+    display:inline;
+    position:absolute;
     width: 100%;
     bottom: 0px;
     z-index: 100;
@@ -16,13 +30,24 @@
     padding: 0px 0px 0px 0px;
 }
 
-#footer .jumbotron{
-  margin-bottom:0px;
+#footer div.jumbotron{
+  margin-top:0px;
+  margin-bottom: 0px;
 }
 
 #footer-content p{
   font-size:16px;
 }
+
+/*CSS across pages*/
+
+.buttons{
+  width:100%;
+  min-height: 50px;
+  padding-bottom: 20px;
+}
+
+
 
 /*CSS for login page views/devise/sessions/new.html.erb */
 
@@ -69,5 +94,28 @@
 }
 
 .otheruser { margin-left: 1px; }
+
+
+/* Album/Show Page */
+
+ /*photos in photos show page*/
+#displayPhoto.thumbnail{
+    background-color: lightgrey;
+}
+
+.thumbnail{
+  padding:2px 2px 2px 2px;
+  display:inline-block;
+  text-align: center;
+
+}
+
+.photos.show.row {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+}
+
 
 
