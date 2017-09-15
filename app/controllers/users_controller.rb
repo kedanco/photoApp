@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
   def index
     @user = User.find(current_user.id)
     @others = User.where.not(id: current_user.id)

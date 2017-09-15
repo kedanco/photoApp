@@ -20,7 +20,7 @@
             <%= f.text_field :description , class: "form-control " %>
           </div>
 
-          <div id="newButtons">
+          <div class="buttons">
             <%= link_to 'Back to Albums', user_path(id: current_user.id), class: "btn btn-primary pull-left" %>  
             <%= f.submit "Update" , class: "btn btn-success pull-right" %>
           </div>

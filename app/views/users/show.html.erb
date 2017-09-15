@@ -1,6 +1,8 @@
+
 <% if user_signed_in? %>
 Your ID: <%= current_user.id %>
 <h1>Hi <%= current_user.name %>!!</h1>
+
 
 <% if current_user.id == @user.id %>
 <h4><p>You are viewing your own page</p></h4>
