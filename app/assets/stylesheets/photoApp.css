@@ -4,6 +4,11 @@ h1,h2,h3,h4,h5,h6{
   text-align: center;
 }
 
+a.btn, input.btn{
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+}
+
 .pageHeader {
   text-align: center;
   > *{
@@ -13,31 +18,23 @@ h1,h2,h3,h4,h5,h6{
 }
 
 #listAlbums{
-  margin:0px 0px 0px 0px;
+  margin:40px 0px 0px 0px;
+
+  p{
+    font-size:18px;
+  }
+  
+  .col-sm-3{
+    max-width:300px;
+  }
+  
 }
 
 #header{
   margin: 0px 0px 0px 0px;
 }
 
-#footer{
-    display:inline;
-    position:absolute;
-    width: 100%;
-    bottom: 0px;
-    z-index: 100;
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-}
 
-#footer div.jumbotron{
-  margin-top:0px;
-  margin-bottom: 0px;
-}
-
-#footer-content p{
-  font-size:16px;
-}
 
 /*CSS across pages*/
 
@@ -98,10 +95,31 @@ h1,h2,h3,h4,h5,h6{
 
 /* Album/Show Page */
 
- /*photos in photos show page*/
-#displayPhoto.thumbnail{
-    background-color: lightgrey;
+#displayThumbs{
+  margin: 30px 50px 0px 50px;
+  padding: 10px 20px 0px 20px;
 }
+
+ /*photos in photos show page*/
+
+#displayPhoto{
+
+  align-content:center;
+  width:100%;
+  margin: 0px auto;
+
+  .thumbnail{
+    background-color: lightgrey;
+    display:inline;
+  }
+
+  #caption{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
+}
+
 
 .thumbnail{
   padding:2px 2px 2px 2px;
@@ -119,3 +137,27 @@ h1,h2,h3,h4,h5,h6{
 
 
 
+
+
+/*Footer CSS*/
+
+#footer{
+    display:inline;
+    position:absolute;
+    width: 100%;
+    bottom: 0px;
+    z-index: 100;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+#footer div.jumbotron{
+  margin-top:0px;
+  margin-bottom: 0px;
+}
+
+#footer-content p{
+  font-size:16px;
+}
+
+/*End of Footer CSS */
