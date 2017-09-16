@@ -24,16 +24,23 @@
         <% end %>
 
         <%= link_to 'View Other Users', users_path, class: "btn btn-info" %>
+        <% if current_user.id == @user.id %> 
+        <!-- Need to implement the above ^ check in users/show, album/show and photos/show to a boolean -->
+        <!-- Then check across the pages, viewing other users should not see create/edit/delete buttons -->
         <%= link_to 'Create New Album', new_album_path, class: "btn btn-success" %>
+        <% end %>
         
 
     </div>
 
     <div id="listAlbums" class="row">
+        <% if @albums.empty? %>
+             <h4> No albums have been created. </h4>
+        <% else %>
       <div class="col-md-offset-3">
     <!-- Display List of Albums -->
 
-        <% if (@albums.empty?) == false %>
+        
               <% @albums.each do |album| %>
               
                 <div class="col-sm-3"> 
@@ -50,8 +57,6 @@
                 </div>
               
               <% end %>
-        <% else %>
-                <h4> No albums have been created. </h4>
         <% end %>
       </div>
     </div>

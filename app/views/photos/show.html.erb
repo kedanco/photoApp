@@ -5,9 +5,9 @@
 
       <h2> Photo Display </h2>
 
-      <%= link_to "Back", album_path(id:@photo.album_id), class: "btn btn-default" %>
+      <%= link_to "Back", album_path(id: @photo.album_id), class: "btn btn-default" %>
       <%= link_to 'Edit', edit_album_photo_path(album_id:@photo.album_id, id: @photo.id), class: "btn btn-primary " %> 
-      <%= link_to 'Delete', album_photo_path(album_id:@photo.album_id, id: @photo.id), method: :delete, class: "btn btn-danger "%>
+      <%= link_to 'Delete', album_photo_path(album_id: @photo.album_id,id: @photo.id), method: :delete, class: "btn btn-danger "%>
 
   </div>
 
@@ -23,6 +23,25 @@
       </h3>
     </div>
 
+    <div class="displayComments well">
+
+        <% if @comments.any? %>
+          <h2><%= @comments.size %> Comment(s) </h2>
+          <% @comments.each do |comment| %>
+            <%= render comment %>
+          <% end %>
+        <% else %>
+          <p>There are no comments.</p>
+        <% end %>
+
+        <%= render 'comments/new', review: Comment.new(photo_id: @photo.id) %>
+      
+    </div>
+
   </div>
   
 </div>
+
+
+    <%= render 'layouts/textarea' %>
+
