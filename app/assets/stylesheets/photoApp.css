@@ -1,4 +1,8 @@
+/*CSS across pages*/
 
+html,body{
+  background-color:#F5F5F5;
+}
 
 h1,h2,h3,h4,h5,h6{
   text-align: center;
@@ -11,32 +15,18 @@ a.btn, input.btn{
 
 .pageHeader {
   text-align: center;
+
   > *{
     padding: 10px 5px 10px 5px;
   }
 
 }
 
-#listAlbums{
-  margin:40px 0px 0px 0px;
 
-  p{
-    font-size:18px;
-  }
-  
-  .col-sm-3{
-    max-width:300px;
-  }
-  
-}
 
 #header{
   margin: 0px 0px 0px 0px;
 }
-
-
-
-/*CSS across pages*/
 
 .buttons{
   width:100%;
@@ -44,7 +34,7 @@ a.btn, input.btn{
   padding-bottom: 20px;
 }
 
-
+/*end of across pages */
 
 /*CSS for login page views/devise/sessions/new.html.erb */
 
@@ -74,23 +64,47 @@ a.btn, input.btn{
 
   }
 
-    html, body{
-      background-color: darkgrey;
-    }
+  html, body{
+    background-color: darkgrey;
+  }
 
 
-    h2{
-      margin-bottom: 20px;
-    }
-  
-    label, input{
-      display:inline-block;
-      padding:5px 5px 5px 5px;
-      
-    }
+  h2{
+    margin-bottom: 20px;
+  }
+
+  label, input{
+    display:inline-block;
+    padding:5px 5px 5px 5px;
+  }
+
 }
 
+/*User Show page*/
+
 .otheruser { margin-left: 1px; }
+
+
+#listAlbums{
+  margin:40px 0px 0px 0px;
+
+  p{
+    font-size:18px;
+  }
+  
+  .col-sm-3{
+    max-width:300px;
+  }
+  
+}
+
+/*end of User Show*/
+
+/*
+=================
+ALBUMS
+=================
+*/
 
 
 /* Album/Show Page */
@@ -100,7 +114,21 @@ a.btn, input.btn{
   padding: 10px 20px 0px 20px;
 }
 
- /*photos in photos show page*/
+/* Album/Edit Page*/
+
+.albums.edit{
+  .buttons{
+    padding-top: 20px;
+  }
+}
+
+/*
+=================
+PHOTOS
+=================
+*/
+
+ /*photos show page*/
 
 #displayPhoto{
 
@@ -114,8 +142,7 @@ a.btn, input.btn{
   }
 
   #caption{
-    padding-left: 50px;
-    padding-right: 50px;
+    margin-bottom: 40px;
   }
   
 }
@@ -136,14 +163,80 @@ a.btn, input.btn{
 }
 
 
+.displayComments{
+  
+  background-color:white;
+  
+  resize:vertical;
+  max-width:1020px;
+  width:100%;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  h2{
+    padding-bottom: 10px;
+  }
+
+  input.btn{
+    /*vertical-align: center;*/
+  }
+
+  div{
+    height:100%;
+  }
+
+
+  .commentItem{
+
+    height:100%;
+    width:100%;
+    margin: 0px auto;
+    align-content: center;
+    display: inline-block;
+    text-align: left;
+
+
+    p{
+      font-size: 16px;
+    }
+
+    #timeAgo{
+      text-align: right !important;
+      font-size:12px;
+    }
+
+  }
+
+  form{
+    overflow: hidden;
+    vertical-align: center;
+  }
+
+  textarea{
+    border:2px solid grey !important;
+    resize: vertical;
+    height: 100%;
+    overflow: auto;
+    z-index: 2;
+  }
+
+  .addComment{
+    position:relative;
+    bottom:0px;
+    padding: 0px 0px 0px 15px;
+
+  }
+
+}
 
 
 
-/*Footer CSS*/
+
+/*Footer CSS
 
 #footer{
     display:inline;
-    position:absolute;
+    
     width: 100%;
     bottom: 0px;
     z-index: 100;
@@ -151,13 +244,11 @@ a.btn, input.btn{
     padding: 0px 0px 0px 0px;
 }
 
-#footer div.jumbotron{
-  margin-top:0px;
-  margin-bottom: 0px;
-}
-
 #footer-content p{
   font-size:16px;
+  padding:5px 10px 5px 10px;
+    margin-top:30px;
+  margin-bottom: 30px;
 }
 
-/*End of Footer CSS */
+End of Footer CSS */
