@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :albums
   has_many :comments
+  validates :name, presence: true
 end
