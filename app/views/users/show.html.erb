@@ -2,10 +2,8 @@
     <div class="pageHeader">
         <% if user_signed_in? %>
 
-
-<% if user_signed_in? %>
-<h1>Hi <%= current_user.name %>!!</h1>
-
+            Your ID: <%= current_user.id %>
+            <h1>Hi <%= current_user.name %>!!</h1>
 
             <% if current_user.id == @user.id %>
 
