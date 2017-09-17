@@ -6,16 +6,17 @@
 
   <h1>Albums Show Page</h1>
 
-  <h4> Title:  <%= @album.title %> </h4> 
-  <h4> Description:  <%= @album.description %> </h4>
+  <h3>  <strong> <%= @album.title %> </strong> </h3> 
+  <h4>  <%= @album.description %> </h4>
 
-  <%= link_to 'Add a new Photo', new_album_photo_path(album_id: @album.id), class: "btn btn-default"  %>  
-
-  <%= link_to 'Back to Albums', user_path(id: current_user.id), class: "btn btn-primary" %>  
+  <%= link_to 'Back', user_path(id: current_user.id), class: "btn btn-default" %>  
+  <%= link_to 'Add Photo', new_album_photo_path(album_id: @album.id), class: "btn btn-success"  %> 
+  <%= link_to "Edit", edit_album_path(id: @album.id), class: "btn btn-primary" %> 
+  <%= link_to "Delete", album_path(id: @album.id), method: :delete, class: "btn btn-danger" %>  
 
   </div>
 
-  <div class="displayPhotos">
+  <div id="displayThumbs">
 
   <% if !(@photos.empty?) %>
     <%- @photos.each do |photo| %>
@@ -27,7 +28,7 @@
     <h5>There are currently no photos in this album.</h5>
   <% end %>
 
-</div>
+  </div>
 
 </div>
 

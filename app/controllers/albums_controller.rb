@@ -33,9 +33,11 @@ class AlbumsController < ApplicationController
       album_params = params[:album].permit(:title, :description)
       @album = Album.find(params[:id])
         if @album.update(album_params)
-        redirect_to album_path(id: @album.id)
+          flash[:success] = "Album successfully updated!"
+          redirect_to album_path(id: @album.id)
         else
-        render :edit
+          flash[:warning] = "There was an error updating Album."
+          render :edit
         end
     end
 

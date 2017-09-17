@@ -1,0 +1,20 @@
+
+<% user = User.find(comment.user_id) %>
+
+<div class="commentItem" class="row">
+  <p class="col-sm-6 col-sm-offset-2"> <%= link_to user_path(id:user.id) do %> <%= user.name %> <% end %> <span></span>  
+     <%= comment.text %>  <br/> <span id="timeAgo"> <%= time_ago_in_words(comment.created_at) %> ago </span></p>
+  
+
+  <% if user_signed_in? && current_user %>
+    <div class="commentButtons col-sm-4">
+      <%= link_to 'Edit', edit_comment_path(id: comment.id), class: "btn btn-primary" %> 
+      <%= link_to 'Delete', comment_path(id: comment.id),
+                                      method: :delete,
+                                      class: "btn btn-danger",
+                                        data: { confirm: 'Are you sure?' } %>
+    </div>
+                                    
+  <% end %>
+
+</div>

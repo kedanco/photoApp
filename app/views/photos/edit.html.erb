@@ -7,13 +7,12 @@
 
       <div class="form-group">
         <%= f.label   :caption , class: "control-label col-sm-2"%>
-        <div class="col-sm-8 col-sm-offset-2"><%= f.text_field :caption , class: "form-control"  %></div>
+        <div class="col-sm-8 col-sm-offset-2"><%= f.text_area :caption , class: "form-control"  %></div>
       </div>
-
 
       <div class="buttons">
 
-      <%= link_to 'Back to Photos', album_photo_path(album_id: @photo.album.id, id: @photo.id), class: "btn btn-primary pull-left" %>  
+      <%= link_to 'Back', album_photo_path(album_id: @photo.album.id, id: @photo.id), class: "btn btn-primary" %>  
 
       <%= f.submit "Update" , class: "btn btn-success pull-right" %>
         
@@ -21,11 +20,12 @@
 
       <% end %>
 
-      
   </div>
 </div>
 
   <script>
-        var form = document.getElementById("edit_photo");
-        form.className += " form-horizontal";
+        var form = document.getElementsByTagName("form");
+        form[0].className += " form-horizontal";
   </script>
+
+  <%= render 'layouts/textarea' %>

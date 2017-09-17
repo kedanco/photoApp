@@ -1,61 +1,75 @@
+<div class="row">
+    <div class="pageHeader">
+        <% if user_signed_in? %>
+
 
 <% if user_signed_in? %>
 <h1>Hi <%= current_user.name %>!!</h1>
 
 
-<% if current_user.id == @user.id %>
-<h4><p>You are viewing your own page</p></h4>
+            <% if current_user.id == @user.id %>
 
-<% else %>
+                <h4><p>Your Homepage</p></h4>
 
+            <% else %>
 
-<h4><p>You are viewing <%= @user.name %>'s Page</p></h4>
-<p><%= @user.name %>'s' ID: <%= @user.id %> </p>
-<p> Email: <%= @user.email %> </p>
-<% end %>
+                <h4><p>You are viewing <%= @user.name %>'s Page</p></h4>
+                <p><%= @user.name %>'s' ID: <%= @user.id %> </p>
+                <p> Email: <%= @user.email %> </p>
 
+            <% end %>
 
-<div id="listAlbums" class="row">
+        <% else %>
 
-<p> Click to Access an Album: </p>
+            <h1>no user signed in.</h1>
 
-<!-- Display List of Albums -->
+        <% end %>
 
-    <% if (@albums.empty?) == false %>
-          <% @albums.each do |album| %>
-          
-            <div class="col-sm-6 col-md-4"> 
-              <div class="thumbnail">
-                <img src="" alt="">
-                <div class="caption">
-                  <h4> <%= link_to album_path(id: album.id) do %> <%= album.title %> <% end %> </h4>
-                   <p> <%= album.description %> </p>
-                    <div id="albumButtons">
-                       <%= link_to "Edit", edit_album_path(id: album.id), class:"btn btn-default" %> 
-                      <%= link_to "Delete", album_path(id: album.id), method: :delete, class: "btn btn-danger" %> 
-                    </div> 
-                </div>
-              </div>
-            </div>
-          
+        <%= link_to 'View Other Users', users_path, class: "btn btn-info" %>
+        <% if current_user.id == @user.id %> 
+        <!-- Need to implement the above ^ check in users/show, album/show and photos/show to a boolean -->
+        <!-- Then check across the pages, viewing other users should not see create/edit/delete buttons -->
+        <%= link_to 'Create New Album', new_album_path, class: "btn btn-success" %>
+        <% end %>
+        
+    </div>
+
+    <div id="listAlbums" class="row">
+        <% if @albums.empty? %>
+             <h4> No albums have been created. </h4>
+        <% else %>
+      <div class="col-md-offset-3">
+    <!-- Display List of Albums -->
+        
+              <% @albums.each do |album| %>
               
-          <% end %>
-    <% else %>
-            <h4> No albums have been created. </h4>
-    <% end %>
+                <div class="col-sm-3"> 
+                  <div class="thumbnail">
+                    <img src="" alt="">
+                    <div class="caption">
+                      <h3> <%= link_to album_path(id: album.id) do %> <%= album.title %> <% end %> (<%= album.photos.count %> Photos)</h3>
+                       
+                        <div id="albumButtons">
+                          
+                        </div> 
+                    </div>
+                  </div>
+                </div>
+              
+              <% end %>
+        <% end %>
+      </div>
+    </div>
+
+
 
 </div>
 
 
-
-<%= link_to 'Create New Album', new_album_path, class: "btn btn-success" %>
-<%= link_to 'View Other Users', users_path, class: "btn btn-success" %>
 <br><br><br>
 
 
-<% else %>
-<h1>no user signed in.</h1>
-<% end %>
+
 
 
 
