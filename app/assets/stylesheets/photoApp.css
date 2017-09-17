@@ -34,6 +34,12 @@ a.btn, input.btn{
   padding-bottom: 20px;
 }
 
+textarea{
+    resize: vertical;
+    height: 100%;
+    overflow: auto;
+}
+
 /*end of across pages */
 
 /*CSS for login page views/devise/sessions/new.html.erb */
@@ -110,6 +116,7 @@ ALBUMS
 /* Album/Show Page */
 
 #displayThumbs{
+  
   margin: 30px 50px 0px 50px;
   padding: 10px 20px 0px 20px;
 }
@@ -214,13 +221,11 @@ PHOTOS
 
   textarea{
     border:2px solid grey !important;
-    resize: vertical;
-    height: 100%;
-    overflow: auto;
+    
     z-index: 2;
   }
 
-  .addComment{
+  .commentForm{
     position:relative;
     bottom:0px;
     padding: 0px 0px 0px 15px;
@@ -228,6 +233,17 @@ PHOTOS
   }
 
 }
+
+/*Edit Comment page*/
+
+.edit_comment{
+  max-width:800px;
+  margin:0px auto;
+
+}
+
+
+/*end of page*/
 
 
 
