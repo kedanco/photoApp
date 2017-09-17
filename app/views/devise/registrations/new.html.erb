@@ -33,12 +33,12 @@
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %><br>
   </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
-<% end %>
+<% end %><br>
 
 <%= render "devise/shared/links" %>
