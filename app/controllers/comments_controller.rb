@@ -10,10 +10,7 @@ class CommentsController < ApplicationController
     photo = Photo.find(comment_params[:photo_id])
     @comment = Comment.new(comment_params)
 
-      if @comment.save
-        flash[:success] = "Comment successfully created!"
-
-      else
+      if !(@comment.save)
         flash[:warning] = "There was an error adding your comment."
 
       end
@@ -21,10 +18,20 @@ class CommentsController < ApplicationController
   end
 
   def edit
-
+    @comment = Comment.find(params[:id])
   end
 
   def update
+    comment_params = params[:comment].permit(:user_id,:photo_id,:text)
+    comment = Comment.find(params[:id])
+    photo = Photo.find(comment.photo_id)
+    if comment.update(comment_params)
+        flash[:success] = "Comment successfully updated!"
+        redirect_to album_photo_path(album_id: photo.album_id, id:photo.id)
+      else
+        flash[:warning] = "There was a problem updating your comment."
+        render :edit
+      end
 
   end
 

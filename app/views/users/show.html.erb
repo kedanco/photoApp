@@ -7,7 +7,7 @@
 
             <% if current_user.id == @user.id %>
 
-                <h4><p>You are viewing your own page</p></h4>
+                <h4><p>Your Homepage</p></h4>
 
             <% else %>
 
@@ -30,7 +30,6 @@
         <%= link_to 'Create New Album', new_album_path, class: "btn btn-success" %>
         <% end %>
         
-
     </div>
 
     <div id="listAlbums" class="row">
@@ -39,7 +38,6 @@
         <% else %>
       <div class="col-md-offset-3">
     <!-- Display List of Albums -->
-
         
               <% @albums.each do |album| %>
               

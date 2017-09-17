@@ -34,8 +34,10 @@
           <p>There are no comments.</p>
         <% end %>
 
-        <%= render 'comments/new', review: Comment.new(photo_id: @photo.id) %>
-      
+        <div id="commentForm">
+          <%= render 'comments/new' %>
+        </div>
+
     </div>
 
   </div>
