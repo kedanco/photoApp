@@ -6,15 +6,17 @@
      <%= comment.text %>  <br/> <span id="timeAgo"> <%= time_ago_in_words(comment.created_at) %> ago </span></p>
   
 
-  <% if user_signed_in? && current_user %>
+  
     <div class="commentButtons col-sm-4">
+      <% if current_user.id == user.id %> 
       <%= link_to 'Edit', edit_comment_path(id: comment.id), class: "btn btn-primary" %> 
       <%= link_to 'Delete', comment_path(id: comment.id),
                                       method: :delete,
                                       class: "btn btn-danger",
                                         data: { confirm: 'Are you sure?' } %>
+       <% end %>
     </div>
                                     
-  <% end %>
+  
 
 </div>

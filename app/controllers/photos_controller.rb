@@ -27,6 +27,8 @@ class PhotosController < ApplicationController
       @photo = Photo.find(params[:id])
       @comments = @photo.comments.all
       @comment = @photo.comments.new
+      album = Album.find(@photo.album_id)
+      @user = User.find(album.user_id)
       
     end
 

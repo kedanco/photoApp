@@ -18,7 +18,7 @@
            <div class="navbar navbar-inverse navbar-static-top">
               <%= link_to 'Home', root_path, class: "navbar-brand" %>
               <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "navbar-brand" %>
-             <div class="navbar-text"> Your ID: <%= current_user.id %>
+             <div class="navbar-text"> Your ID: <%= current_user.id %> </div>
           </div>
            <% end %>
       </div>

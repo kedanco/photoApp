@@ -10,7 +10,9 @@ class CommentsController < ApplicationController
     photo = Photo.find(comment_params[:photo_id])
     @comment = Comment.new(comment_params)
 
-      if !(@comment.save)
+      if @comment.save
+        flash[:success] = "Comment successfully added!"
+      else
         flash[:warning] = "There was an error adding your comment."
 
       end
@@ -39,7 +41,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     photo = Photo.find(@comment.photo_id)
     @comment.destroy
-    
+    flash[:success] = "Comment deleted!"
     redirect_to album_photo_path(album_id: photo.album_id, id:photo.id)
 
   end
