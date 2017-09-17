@@ -1,10 +1,10 @@
-<div id="titleHeader" class="row" align="center">
+<div id="titleHeader" class="row sign" align="center">
 
     <h1> Welcome To Your <i class="fa fa-picture-o fa-2x" aria-hidden="true"></i> App!  </h1>
 
 </div>
 
-<div class="row" align="center">
+<div class="row signform" align="center">
     <div class="loginForm" class="well">
 
     <h2>Log in</h2>
@@ -12,12 +12,12 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
       <div class="field form-group">
-       <%= f.label :email %> 
+       <%= f.label :email %><br> 
         <%= f.email_field :email, autofocus: true, placeholder: "Email" %> 
       </div>
 
       <div class="field form-group">
-        <%= f.label :password %>
+        <%= f.label :password %><br>
         <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
       </div>
 
