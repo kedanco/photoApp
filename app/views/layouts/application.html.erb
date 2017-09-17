@@ -10,20 +10,22 @@
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
-    <div class="container-fluid">
+    <div class="container-fluid"></div>
       <div id="header" class="row">
         <%= render 'layouts/messages' %>
      
            <% if user_signed_in? %>
-              <%= link_to 'Home', root_path %>
-              <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+           <div class="navbar navbar-inverse navbar-static-top">
+              <%= link_to 'Home', root_path, class: "navbar-brand" %>
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "navbar-brand" %>
+             <div class="navbar-text"> Your ID: <%= current_user.id %>
+          </div>
            <% end %>
       </div>
 
        <%= yield %>
 
-    </div>
 
   </body>
- 
-</html>
+  </html>
+
