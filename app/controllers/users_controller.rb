@@ -12,6 +12,21 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
     @albums = @user.albums.all
-  end
- 
+
+
+    # album photos
+    @firstPhotos = []
+
+    #access each album, put photo into firstPhotos
+    @albums.each do |album|
+      if album.photos.empty?
+        @firstPhotos << '../greybg.png'
+
+      else
+        @firstPhotos << album.photos.first.image.thumb.url
+      end
+    end
+
+  end 
+
  end
