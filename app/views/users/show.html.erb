@@ -36,27 +36,29 @@
         <% if @albums.empty? %>
              <h4> No albums have been created. </h4>
         <% else %>
-      <div class="col-md-offset-3">
+      <div class="col-sm-offset-1">
     <!-- Display List of Albums -->
         
               <% @albums.each do |album| %>
               
                 <div class="col-sm-3"> 
+                    <%= link_to album_path(id: album.id) do %>
                   <div class="thumbnail">
-                    <img src="" alt="">
+                    <div class="blackBg">
+                    
                     <div class="caption">
-                      <h3> <%= link_to album_path(id: album.id) do %> <%= album.title %> <% end %> (<%= album.photos.count %> Photos)</h3>
-                       
-                        <div id="albumButtons">
-                          
-                        </div> 
+                      <h3>  <%= album.title %> <span>(<%= album.photos.count %> Photos)</span></h3>
+                    
+                    </div>
                     </div>
                   </div>
+                  <% end %>
                 </div>
               
               <% end %>
         <% end %>
       </div>
+      <div class="col-sm-1"></div>
     </div>
 
 
@@ -65,6 +67,18 @@
 
 
 <br><br><br>
+
+<script>
+
+    var thumbs = document.getElementsByClassName("thumbnail");
+    var imageArr = <%= @firstPhotos.to_json.html_safe %>
+
+    for (var i=0; i<thumbs.length; i++){
+        thumbs[i].style.backgroundImage = "url(" + imageArr[i] + ")";
+    }
+
+
+</script>
 
 
 

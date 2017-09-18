@@ -92,16 +92,50 @@ textarea{
 
 
 #listAlbums{
-  margin:40px 0px 0px 0px;
+  display:block;
+  align-content: center;
+  margin:40px auto 0px auto;
 
   p{
     font-size:18px;
   }
   
   .col-sm-3{
-    max-width:300px;
+    margin: 0px auto;
+    margin-left: 60px;
+    margin-right: 60px;
   }
-  
+
+  .thumbnail{
+    padding: 0px;
+    background-size: cover;
+
+    width:300px;
+    height:250px;
+    
+  }
+
+  .thumbnail h3{
+    position:absolute;
+    bottom:30px;
+    left:20px;
+    margin: 0;
+    color: white;
+    text-shadow: 1px 2px 0 black;
+  }
+  .thumbnail h3 span{
+    font-size: 16px;
+  }
+
+  .blackBg{
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.5)
+    );
+  }
+
 }
 
 /*end of User Show*/
